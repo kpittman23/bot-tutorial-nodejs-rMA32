@@ -8,7 +8,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegexKya = /(.|)*(k|K)ya!~/;
       botname = /(.|)*kyaa!~/;
-      botsave = /(.|)*save/;
+      botsave = /(.|)*\bsave\b/;
   
   var waifuPhrases = [ "https://pbs.twimg.com/media/B8YdqjxIQAAU87L.jpg", "It's not like I l-like you or anything...", 
                       "B-B-baka!", "My senpai is the best!", "But isn't that... lewd?", "Kemy-kun is sugoi, but not as sugoi as senpai!", "Noooo!",
