@@ -22,7 +22,7 @@ function respond() {
     postMessage(getReturnString(waifuPhrases[getRandomInt(0,waifuPhrases.length)], request.name));
     this.res.end();
   }
-  else if(request.text && new RegEx(botname).test(request.text)) {
+  else if(request.text && botname.test(request.text)) {
     this.res.writeHead(200);
     postMessage("test");
     this.res.end();
