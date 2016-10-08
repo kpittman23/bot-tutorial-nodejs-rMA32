@@ -5,6 +5,8 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegexKya = /(.|)*(k|K)ya!~/;
+      botname = /(.|)*name/;
+      botsave = /(.|)*save/;
   
   var waifuPhrases = [ "It's not like I l-like you or anything...", "_-kun is so moe!", "Do you think I'm kawaii, _?",
                       "B-B-baka!", "_-senpai is the best!", "But isn't that... lewd?", "Kemy-kun is sugoi, but not as sugoi as _-senpai!", "Noooo!",
@@ -20,11 +22,24 @@ function respond() {
     postMessage(getReturnString(waifuPhrases[getRandomInt(0,waifuPhrases.length)], request.name));
     this.res.end();
   }
+  else if(request.text && new RegEx(botname).test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("test");
+    this.res.end();
+  }
+  else if(request.text && botsave.test(request.text)) {
+    
+    this.res.end();
+  }
   else {
     console.log("Nothing happened");
     this.res.writeHead(200);
     this.res.end();
   }
+}
+
+funciton save(){
+  
 }
 
 function postMessage(response) {
