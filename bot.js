@@ -25,7 +25,7 @@ function respond() {
     this.res.end();
   }
   else if(request.text && botsave.test(request.text)) {
-    
+    postMessage("saved"
     this.res.end();
   }
   else {
