@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegexKya = /(.|)*kya!~/;
+      botRegexKya = /(.|)*(k|K)ya!~/;
       botname = /(.|)*kyaa!~/;
       botsave = /(.|)*save/;
   
