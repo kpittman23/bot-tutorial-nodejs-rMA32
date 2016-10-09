@@ -37,7 +37,8 @@ function respond() {
 }
 
 function saveProgress(){
-  postMessage("Your progress has been saved!");
+  var saveCode = getRandomInt(0,10);
+  postMessage("Your progress has been saved!" + saveCode.toString());
 }
 
 function postMessage(response) {
