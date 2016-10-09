@@ -42,7 +42,7 @@ function respond() {
 	}
 	else if(request.text && botsavecode.test(request.text)) {
 		postMessage("Please enter your saved game code.");
-		decode(request.text)
+		decode(request.text);
 		this.res.end();
 	}
 	else {
