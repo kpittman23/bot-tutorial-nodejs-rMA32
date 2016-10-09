@@ -113,7 +113,7 @@ function saveProgress() {
 		for (i = 0; i < 15; i++){
 			charSaveCode = charSaveCode + charArray[i];
 		}
-		postMessage(charSaveCode.toString());
+		postMessage("Your saved game code is: " + charSaveCode.toString());
 
 	}
 
@@ -131,6 +131,8 @@ function saveProgress() {
 		hp = digitArray[10] + digitArray[11] * 10;
 		speed = digitArray[12] + digitArray[13] * 10;
 		checkpoint = digitArray[13];
+		
+		postMessage(digitArray.toString());
 
 	}
 
