@@ -12,50 +12,6 @@ var checkpoint = 1;
 var allCharacterRaces = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
 var allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomancer"];
 
-/*class character{
-	constructor(){
-		this.allCharacterRaces = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
-		this.allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomancer"];
-	}
-//	character name functions
-	setCharacterName( characterName ){
-		this.characterName = characterName;
-	}
-	getCharacterName(){
-		return this.characterName;
-	}
-//	character races
-	setCharacterRace( characterRace ){
-		this.characterRace = characterRace;
-	}
-	printAllCharacterRaces(){
-		this.res.writeHead(200);
-		for( var i = 0; i < 5; i++){
-			postMessage( this.allCharacterRaces[i] );
-		}
-		this.res.end();
-		return allCharacterRaces;
-	}
-	getCharcterRace(){
-		return this.characterRace;
-	}
-
-//	classes
-	setClass( className ){
-		this.characterClass = className;
-	}
-	printAllClasses(){
-		this.res.writeHead(200);
-		for( var i = 0; i < 5; i++ ){
-			postMessage( this.allCharacterClasses[i] );
-		}
-		this.res.end();
-	}
-	getCharacterClass(){
-		return this.characterClass;
-	}
-};*/
-
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]),
@@ -112,7 +68,7 @@ function saveProgress() {
 		break;
 	}
 	var charClass = "Warrior";
-	switch(cclass){
+	switch(charClass){
 	case "Warrior":
 		savecode = savecode + 10000000000000;
 		break;
