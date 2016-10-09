@@ -49,7 +49,6 @@ function respond() {
 
 
 function saveProgress() {
-	postMessage("made it");
 	var savecode = 0;
 	var race = "Human";
 	switch(race){
