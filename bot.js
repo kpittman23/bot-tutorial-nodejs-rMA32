@@ -39,7 +39,7 @@ function respond() {
 function saveProgress(){
   var saveCode = 111111111111111;
   var newFirstDig = saveCode % 10000000000000000;
-  postMessage("your save code is " + saveCode.toString() + " and your new first digit is " + newFirstDig.toString());
+  postMessage("your saved code is " + saveCode.toString() + " and your new first digit is " + newFirstDig.toString());
 }
 
 function postMessage(response) {
