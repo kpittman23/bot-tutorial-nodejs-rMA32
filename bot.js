@@ -3,9 +3,7 @@ var HTTPS = require('https');
 var botID = process.env.BOT_ID;
 
 var races = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
-var race = races[0];
 var chosenClasses = ["Warrior", "Rogue", "Range", "Berzerker", "Xenomancer"];
-var chosenClass = chosenClasses[0];
 var attack = 20;
 var defense = 30;
 var evasiveness = 55;
@@ -13,6 +11,50 @@ var accuracy = 51;
 var hp = 99;
 var speed = 61;
 var checkpoint = 1;
+
+class character{
+	constructor(){
+		this.allCharacterRaces = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
+		this.allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomancer"];
+	}
+//	character name functions
+	setCharacterName( characterName ){
+		this.characterName = characterName;
+	}
+	getCharacterName(){
+		return this.characterName;
+	}
+//	character races
+	setCharacterRace( characterRace ){
+		this.characterRace = characterRace;
+	}
+	printAllCharacterRaces(){
+		this.res.writeHead(200);
+		for( var i = 0; i < 5; i++){
+			postMessage( this.allCharacterRaces[i] );
+		}
+		this.res.end();
+		return allCharacterRaces;
+	}
+	getCharcterRace(){
+		return this.characterRace;
+	}
+
+//	classes
+	setClass( className ){
+		this.characterClass = className;
+	}
+	printAllClasses(){
+		this.res.writeHead(200);
+		for( var i = 0; i < 5; i++ ){
+			postMessage( this.allCharacterClasses[i] );
+		}
+		this.res.end();
+	}
+	getCharacterClass(){
+		return this.characterClass;
+	}
+};
 
 
 function respond() {
@@ -53,89 +95,130 @@ function respond() {
 	}
 }
 
-	
 
-function saveProgress(){
-	var saveCode = 123456789012343;
+
+function saveProgress() {
+	var saveCode = 0;
+	var race = character.getCharacterRace;
+	switch(race){
+	case "Human":
+		savecode = savecode + 100000000000000; 
+		break;
+	case "Android":
+		savecode = savecode + 200000000000000;
+		break;
+	case "Glorgok":
+		savecode = savecode + 300000000000000;
+		break;
+	case "Ikatrians":
+		savecode = savecode + 400000000000000;
+		break;
+	case "Zolts":
+		savecode = savecode + 500000000000000;
+		break;
+	}
+	var cclass = character.getCharacterClass;
+	switch(cclass){
+	case "Warrior":
+		savecode = savecode + 10000000000000;
+		break;
+	case "Rogue":
+		savecode = savecode + 20000000000000;
+		break;
+	case "Ranger":
+		savecode = savecode + 30000000000000;
+		break;
+	case "Berzerker":
+		savecode = savecode + 40000000000000;
+		break;
+	case "Xenomancer":
+		savecode = savecode + 50000000000000;
+		break;
+	}
+	savecode = savecode + attack * 100000000000;
+	savecode = savecode + defense * 1000000000;
+	savecode = savecode + evasivness * 10000000;
+	savecode = savecode + accuracy * 100000;
+	savecode = savecode + hp * 1000;
+	savecode = savecode + speed *10;
+	savecode = savecode + checkpoint;
 	var encodedSaveCode = encode(saveCode);
-	postMessage("Your game has been saved! Your saved code is: " + encodedSaveCode.toString());
+	
 }
 
-function encode(saveCode){
-	  var digitArray = [];
-	  for(i = 0; i < 15; i++){
-	   digitArray[i] = saveCode % 10;
-	   saveCode = saveCode - digitArray[i];
-	   saveCode = saveCode / 10;
-	  }
-	  var charArray = [];
-	  for(i = 0; i < 15; i++){
+	function encode(saveCode){
+		var digitArray = [];
+		for(i = 0; i < 15; i++){
+			digitArray[i] = saveCode % 10;
+			saveCode = saveCode - digitArray[i];
+			saveCode = saveCode / 10;
+		}
+		var charArray = [];
+		for(i = 0; i < 15; i++){
 			charArray[i] = String.fromCharCode(97 + digitArray[i]);
 		}
-	  var charSaveCode = '';
-	  for (i = 0; i < 15; i++){
-	   charSaveCode = charSaveCode + charArray[i];
-	  }
-	  return charSaveCode;
-	  
-	}
-
-function decode(saveCode){
-	var digitArray = [];
-	for(i = 0; i < 15; i++){
-		digitArray[i] = saveCode[i].charCodeAt() - 97;
-	}
-	race = races[digitArray[0]];
-	chosenClass = chosenClasses[digitArray[1]];
-	attack = digitArray[2] + digitArray[3] * 10;
-	defense = digitArray[4] + digitArray[5] * 10;
-	evasiveness = digitArray[6] + digitArray[7] * 10;
-	accuracy = digitArray[8] + digitArray[9] * 10;
-	hp = digitArray[10] + digitArray[11] * 10;
-	speed = digitArray[12] + digitArray[13] * 10;
-	checkpoint = digitArray[13];
-	
-}
-
-function postMessage(response) {
-	var botResponse,options, body, botReq;
-
-	botResponse = response
-
-	options = {
-			hostname: 'api.groupme.com',
-			path: '/v3/bots/post',
-			method: 'POST'
-	};
-
-	body = {
-			"bot_id" : botID,
-			"text" : botResponse
-	};
-
-	console.log('sending ' + botResponse + ' to ' + botID);
-
-	botReq = HTTPS.request(options, function(res) {
-		if(res.statusCode == 202) {
-			//neat
-		} else {
-			console.log('rejecting bad status code ' + res.statusCode);
+		var charSaveCode = '';
+		for (i = 0; i < 15; i++){
+			charSaveCode = charSaveCode + charArray[i];
 		}
-	});
+		return charSaveCode;
 
-	botReq.on('error', function(err) {
-		console.log('error posting message '  + JSON.stringify(err));
-	});
-	botReq.on('timeout', function(err) {
-		console.log('timeout posting message '  + JSON.stringify(err));
-	});
-	botReq.end(JSON.stringify(body));
-}
+	}
 
-function getRandomInt(min, max) {
-	return Math.floor(Math.random() * (max - min)) + min;
-}
+	function decode(saveCode){
+		var digitArray = [];
+		for(i = 0; i < 15; i++){
+			digitArray[i] = saveCode[i].charCodeAt() - 97;
+		}
+		this.characterRace = races[digitArray[0]];
+		this.characterClass = chosenClasses[digitArray[1]];
+		attack = digitArray[2] + digitArray[3] * 10;
+		defense = digitArray[4] + digitArray[5] * 10;
+		evasiveness = digitArray[6] + digitArray[7] * 10;
+		accuracy = digitArray[8] + digitArray[9] * 10;
+		hp = digitArray[10] + digitArray[11] * 10;
+		speed = digitArray[12] + digitArray[13] * 10;
+		checkpoint = digitArray[13];
 
+	}
 
-exports.respond = respond;
+	function postMessage(response) {
+		var botResponse,options, body, botReq;
 
+		botResponse = response
+
+		options = {
+				hostname: 'api.groupme.com',
+				path: '/v3/bots/post',
+				method: 'POST'
+		};
+
+		body = {
+				"bot_id" : botID,
+				"text" : botResponse
+		};
+
+		console.log('sending ' + botResponse + ' to ' + botID);
+
+		botReq = HTTPS.request(options, function(res) {
+			if(res.statusCode == 202) {
+				//neat
+			} else {
+				console.log('rejecting bad status code ' + res.statusCode);
+			}
+		});
+
+		botReq.on('error', function(err) {
+			console.log('error posting message '  + JSON.stringify(err));
+		});
+		botReq.on('timeout', function(err) {
+			console.log('timeout posting message '  + JSON.stringify(err));
+		});
+		botReq.end(JSON.stringify(body));
+	}
+
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
+
+	exports.respond = respond;
