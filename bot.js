@@ -15,7 +15,7 @@ var allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomance
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]),
-	botRegexKya = /(.|)*(k|K)ya!~/;
+	botRegexKya = /(.|)*\blol\b/;
 	botsave = /(.|)*\bsave\b/;
 	botsavecode = /(.|)*\breenter\b/;
 
@@ -93,7 +93,7 @@ function saveProgress() {
 	savecode = savecode + speed *10;
 	savecode = savecode + checkpoint;
 	
-	encode(saveCode);
+	postMessage(saveCode.toString());
 	
 }
 
