@@ -20,6 +20,7 @@ function respond() {
 	botRegexKya = /(.|)*(k|K)ya!~/;
 	botname = /(.|)*kyaa!~/;
 	botsave = /(.|)*\bsave\b/;
+	botsavecode = /(.|)*\bsave code\b/;
 
 	var waifuPhrases = [ "https://pbs.twimg.com/media/B8YdqjxIQAAU87L.jpg", "It's not like I l-like you or anything...", 
 		"B-B-baka!", "My senpai is the best!", "But isn't that... lewd?", "Kemy-kun is sugoi, but not as sugoi as senpai!", "Noooo!",
@@ -37,6 +38,10 @@ function respond() {
 	}
 	else if(request.text && botsave.test(request.text)) {
 		saveProgress();
+		this.res.end();
+	}
+	else if(request.text && botsavecode.test(request.text)) {
+		postMessage("i see your save code");
 		this.res.end();
 	}
 	else {
