@@ -19,7 +19,7 @@ function respond() {
 	var request = JSON.parse(this.req.chunks[0]),
 	botRegexKya = /(.|)*(k|K)ya!~/;
 	botname = /(.|)*kyaa!~/;
-	botsave = /(.|)*\bsave\b/;
+	botsave = /(.|)*\bsave game\b/;
 	botsavecode = /(.|)*\breenter game\b/;
 
 	var waifuPhrases = [ "https://pbs.twimg.com/media/B8YdqjxIQAAU87L.jpg", "It's not like I l-like you or anything...", 
