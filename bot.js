@@ -95,7 +95,7 @@ function decode(saveCode){
 	speed = digitArray[12] + digitArray[13] * 10;
 	checkpoint = digitArray[13];
 	
-	postMessage("Your stats will go here. For example, your attack is: " + attack.toString());
+	postMessage("Welcome back! Attack: " + attack.toString() + "/n" + "defense: " + defense.toString());
 	
 }
 
