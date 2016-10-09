@@ -20,7 +20,7 @@ function respond() {
 	botRegexKya = /(.|)*(k|K)ya!~/;
 	botname = /(.|)*kyaa!~/;
 	botsave = /(.|)*\bsave\b/;
-	botsavecode = /(.|)*\breenter game\b/;
+	botsavecode = /(.|)*\breenter\b/;
 
 	var waifuPhrases = [ "https://pbs.twimg.com/media/B8YdqjxIQAAU87L.jpg", "It's not like I l-like you or anything...", 
 		"B-B-baka!", "My senpai is the best!", "But isn't that... lewd?", "Kemy-kun is sugoi, but not as sugoi as senpai!", "Noooo!",
@@ -42,7 +42,7 @@ function respond() {
 	}
 	else if(request.text && botsavecode.test(request.text)) {
 		var inputString = request.text;
-		var canDecode = inputString.replace(/^(www\.)/,"");
+		var canDecode = inputString.replace(/^(reenter)/,"");
 		postMessage("can decode: " + canDecode.toString());
 		this.res.end();
 	}
