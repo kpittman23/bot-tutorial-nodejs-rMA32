@@ -11,8 +11,10 @@ var accuracy = 51;
 var hp = 99;
 var speed = 61;
 var checkpoint = 1;
+var allCharacterRaces = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
+var allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomancer"];
 
-class character{
+/*class character{
 	constructor(){
 		this.allCharacterRaces = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
 		this.allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomancer"];
@@ -54,7 +56,7 @@ class character{
 	getCharacterClass(){
 		return this.characterClass;
 	}
-};
+};*/
 
 
 function respond() {
@@ -170,8 +172,8 @@ function saveProgress() {
 		for(i = 0; i < 15; i++){
 			digitArray[i] = saveCode[i].charCodeAt() - 97;
 		}
-		this.characterRace = races[digitArray[0]];
-		this.characterClass = chosenClasses[digitArray[1]];
+		characterRace = races[digitArray[0]];
+		characterClass = chosenClasses[digitArray[1]];
 		attack = digitArray[2] + digitArray[3] * 10;
 		defense = digitArray[4] + digitArray[5] * 10;
 		evasiveness = digitArray[6] + digitArray[7] * 10;
