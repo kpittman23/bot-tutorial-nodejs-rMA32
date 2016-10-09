@@ -43,7 +43,7 @@ function respond() {
 	else if(request.text && botsavecode.test(request.text)) {
 		var inputString = request.text;
 		var canDecode = inputString.replace(/^(reenter)/,"");
-		postMessage("can decode: " + canDecode.toString());
+		decode(canDecode);
 		this.res.end();
 	}
 	else {
