@@ -2,8 +2,6 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
-var races = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
-var chosenClasses = ["Warrior", "Rogue", "Range", "Berzerker", "Xenomancer"];
 var attack = 20;
 var defense = 30;
 var evasiveness = 55;
@@ -95,7 +93,7 @@ function respond() {
 
 function saveProgress() {
 	var saveCode = 0;
-	var race = character.getCharacterRace;
+	var race = "Human";
 	switch(race){
 	case "Human":
 		savecode = savecode + 100000000000000; 
@@ -113,7 +111,7 @@ function saveProgress() {
 		savecode = savecode + 500000000000000;
 		break;
 	}
-	var cclass = character.getCharacterClass;
+	var charClass = "Warrior";
 	switch(cclass){
 	case "Warrior":
 		savecode = savecode + 10000000000000;
