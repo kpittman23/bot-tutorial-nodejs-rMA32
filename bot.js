@@ -42,6 +42,7 @@ function respond() {
 	}
 	else if(request.text && botsavecode.test(request.text)) {
 		postMessage("Please enter your saved game code.");
+		decode(request.text)
 		this.res.end();
 	}
 	else {
@@ -90,6 +91,8 @@ function decode(saveCode){
 	hp = digitArray[10] + digitArray[11] * 10;
 	speed = digitArray[12] + digitArray[13] * 10;
 	checkpoint = digitArray[13];
+	
+	postMessage("Your stats will go here. For example, your attack is: " + attack.toString());
 	
 }
 
