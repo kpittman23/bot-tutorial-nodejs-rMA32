@@ -20,7 +20,7 @@ function respond() {
 	botRegexKya = /(.|)*(k|K)ya!~/;
 	botname = /(.|)*kyaa!~/;
 	botsave = /(.|)*\bsave\b/;
-	botsavecode = /(.|)*\bsave code\b/;
+	botsavecode = /(.|)*\breenter game\b/;
 
 	var waifuPhrases = [ "https://pbs.twimg.com/media/B8YdqjxIQAAU87L.jpg", "It's not like I l-like you or anything...", 
 		"B-B-baka!", "My senpai is the best!", "But isn't that... lewd?", "Kemy-kun is sugoi, but not as sugoi as senpai!", "Noooo!",
