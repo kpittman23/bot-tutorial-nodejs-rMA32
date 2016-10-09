@@ -53,27 +53,28 @@ function saveProgress(){
 }
 
 function encode(saveCode){
-	var digitArray = [];
-	for(i = 0; i < 15; i++){
-		digitArray[i] = saveCode % 10;
-		saveCode = saveCode - digitArray[i];
-		saveCode = saveCode / 10;
+	  var digitArray = [];
+	  for(i = 0; i < 15; i++){
+	   digitArray[i] = saveCode % 10;
+	   saveCode = saveCode - digitArray[i];
+	   saveCode = saveCode / 10;
+	  }
+	  var charArray = [];
+	  for(i = 0; i < 15; i++){
+			charArray[i] = String.fromCharCode(97 + digitArray[i]);
+		}
+	  var charSaveCode = '';
+	  for (i = 0; i < 15; i++){
+	   charSaveCode = charSaveCode + charArray[i];
+	  }
+	  return charSaveCode;
+	  
 	}
-
-	var sum = 0;
-	for (i = 0; i < 15; i++){
-		sum = sum + digitArray[i] * Math.pow(10,i);
-	}
-	return sum;
-
-}
 
 function decode(saveCode){
 	var digitArray = [];
 	for(i = 0; i < 15; i++){
-		digitArray[i] = saveCode % 10;
-		saveCode = saveCode - digitArray[i];
-		saveCode = saveCode / 10;
+		digitArray[i] = saveCode[i].charCodeAt() - 97;
 	}
 	race = races[digitArray[0]];
 	chosenClass = chosenClasses[digitArray[1]];
@@ -84,6 +85,7 @@ function decode(saveCode){
 	hp = digitArray[10] + digitArray[11] * 10;
 	speed = digitArray[12] + digitArray[13] * 10;
 	checkpoint = digitArray[13];
+	
 }
 
 function postMessage(response) {
