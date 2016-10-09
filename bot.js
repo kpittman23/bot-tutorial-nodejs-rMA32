@@ -148,7 +148,7 @@ function respond() {
 		for (i = 0; i < 15; i++){
 			charSaveCode = charSaveCode + charArray[i];
 		}
-		postMessage(charSaveCode.toString());
+		postMessage("charSaveCode");
 
 	}
 
