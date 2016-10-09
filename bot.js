@@ -49,7 +49,7 @@ function respond() {
 function saveProgress(){
 	var saveCode = 123456789012343;
 	var encodedSaveCode = encode(saveCode);
-	postMessage("the original code was " + saveCode.toString() + " and the encoded one is " + encodedSaveCode.toString());
+	postMessage("Your game has been saved! Your saved code is: " + encodedSaveCode.toString());
 }
 
 function encode(saveCode){
