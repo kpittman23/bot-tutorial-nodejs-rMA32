@@ -10,7 +10,9 @@ var hp = 99;
 var speed = 61;
 var checkpoint = 1;
 var allCharacterRaces = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
+var race = "Human";
 var allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomancer"];
+var charClass = "Warrior";
 
 
 function respond() {
@@ -47,9 +49,8 @@ function respond() {
 
 
 
-function saveProgress() {
+/*function saveProgress() {
 	var saveCode = 0;
-	var race = "Human";
 	switch(race){
 	case "Human":
 		savecode = savecode + 100000000000000; 
@@ -67,7 +68,6 @@ function saveProgress() {
 		savecode = savecode + 500000000000000;
 		break;
 	}
-	var charClass = "Warrior";
 	switch(charClass){
 	case "Warrior":
 		savecode = savecode + 10000000000000;
@@ -95,11 +95,47 @@ function saveProgress() {
 	
 	postMessage(saveCode.toString());
 	
-}
+}*/
 
-	function encode(saveCode){
+	function encode(){
 		var digitArray = [];
-		for(i = 0; i < 15; i++){
+		switch(race){
+			case "Human":
+				raceInt = 0;
+				break;
+			case "Android":
+				raceInt = 1;
+				break;
+			case "Glorgok":
+				raceInt = 2;
+				break;
+			case "Ikatrians":
+				raceInt = 3;
+				break;
+			case "Zolts":
+				raceInt = 4;
+				break;	
+		}
+		switch(charClass){
+			case "Warrior":
+				classInt = 0;
+				break;
+			case "Rogue":
+				classInt = 1;
+				break;
+			case "Ranger":
+				classInt = 2;
+				break;
+			case "Berzerker":
+				classInt = 3;
+				break;
+			case "Xenomancer":
+				classInt = 4;
+				break;	
+		}
+		digitArray[14] = raceInt;
+		digitArray[13] = classInt;
+		for(i = 0; i < 13; i++){
 			digitArray[i] = saveCode % 10;
 			saveCode = saveCode - digitArray[i];
 			saveCode = saveCode / 10;
