@@ -51,7 +51,7 @@ function encode(saveCode){
   }
   var sum = 0;
   for (i = 0; i < 15; i++){
-   sum = sum + digitArray[i] * 10^i;
+   sum = sum + digitArray[i] * Math.pow(10, i);
   }
   return sum;
 }
