@@ -31,7 +31,7 @@ function respond() {
 		this.res.end();
 	}
 	else if(request.text && botsave.test(request.text)) {
-		saveProgress();
+		encode();
 		this.res.end();
 	}
 	else if(request.text && botsavecode.test(request.text)) {
