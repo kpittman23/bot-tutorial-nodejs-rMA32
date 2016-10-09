@@ -62,7 +62,6 @@ var allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomance
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]),
 	botRegexKya = /(.|)*(k|K)ya!~/;
-	botname = /(.|)*kyaa!~/;
 	botsave = /(.|)*\bsave\b/;
 	botsavecode = /(.|)*\breenter\b/;
 
@@ -73,11 +72,6 @@ function respond() {
 	if(request.text && botRegexKya.test(request.text)) {
 		this.res.writeHead(200);
 		postMessage(waifuPhrases[getRandomInt(0,waifuPhrases.length)]);
-		this.res.end();
-	}
-	else if(request.text && botname.test(request.text)) {
-		this.res.writeHead(200);
-		postMessage("test");
 		this.res.end();
 	}
 	else if(request.text && botsave.test(request.text)) {
@@ -144,7 +138,8 @@ function saveProgress() {
 	savecode = savecode + hp * 1000;
 	savecode = savecode + speed *10;
 	savecode = savecode + checkpoint;
-	var encodedSaveCode = encode(saveCode);
+	
+	encode(saveCode);
 	
 }
 
@@ -163,7 +158,7 @@ function saveProgress() {
 		for (i = 0; i < 15; i++){
 			charSaveCode = charSaveCode + charArray[i];
 		}
-		return charSaveCode;
+		postMessage(charSaveCode.toString());
 
 	}
 
