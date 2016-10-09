@@ -27,7 +27,6 @@ function respond() {
   }
   else if(request.text && botsave.test(request.text)) {
     saveProgress();
-    encode();
     this.res.end();
   }
   else {
@@ -38,13 +37,9 @@ function respond() {
 }
 
 function saveProgress(){
-  var saveCode = getRandomInt(0,10);
-  postMessage("Your progress has been saved! Your save code is: " + saveCode.toString());
-}
-
-function encode(saveCode) {
-  postMessage(saveCode.toString());
-  
+  var saveCode = 111111111111111;
+  var newFirstDig = saveCode % 10000000000000000;
+  postMessage("your save code is " + saveCode.toString() + " and your new first digit is " + newFirstDig.toString());
 }
 
 function postMessage(response) {
