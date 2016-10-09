@@ -131,7 +131,7 @@ function saveProgress() {
 		hp = digitArray[11] + digitArray[10] * 10;
 		speed = digitArray[13] + digitArray[12] * 10;
 		checkpoint = digitArray[14];
-		postMessage("Your attack is: "  + attack);
+		postMessage("Your attack is: "  + evasiveness);
 
 	}
 
