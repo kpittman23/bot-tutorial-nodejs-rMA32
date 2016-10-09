@@ -30,7 +30,8 @@ function respond() {
 		this.res.end();
 	}
 	else if(request.text && botsave.test(request.text)) {
-		saveProgress();
+		postMessage("gfd");
+		//saveProgress();
 		this.res.end();
 	}
 	else if(request.text && botsavecode.test(request.text)) {
