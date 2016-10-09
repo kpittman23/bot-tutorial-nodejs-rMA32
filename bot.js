@@ -25,7 +25,7 @@ function respond() {
     this.res.end();
   }
   else if(request.text && botsave.test(request.text)) {
-    postMessage("saved"
+    saveProgress();
     this.res.end();
   }
   else {
@@ -35,6 +35,9 @@ function respond() {
   }
 }
 
+function saveProgress(){
+  console.log("Your progress has been saved!");
+}
 
 function postMessage(response) {
   var botResponse,options, body, botReq;
