@@ -95,7 +95,7 @@ function saveProgress() {
 	savecode = savecode + speed *10;
 	savecode = savecode + checkpoint;
 	
-	encode(saveCode);
+	encode(savecode);
 	
 }
 
