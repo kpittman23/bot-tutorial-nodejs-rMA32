@@ -42,7 +42,7 @@ function respond() {
 	}
 	else if(request.text && botsavecode.test(request.text)) {
 		postMessage("Please enter your saved game code.");
-		decode(request.text);
+		listen();
 		this.res.end();
 	}
 	else {
@@ -51,6 +51,16 @@ function respond() {
 		this.res.end();
 	}
 }
+
+function listen() {
+	if(request.name != "Hackathon Bot"){
+		var string = request.text;
+		return decode(string);
+	}
+		
+	
+}
+	
 
 function saveProgress(){
 	var saveCode = 123456789012343;
