@@ -19,7 +19,7 @@ function respond() {
 	var request = JSON.parse(this.req.chunks[0]),
 	botRegexKya = /(.|)*(k|K)ya!~/;
 	botname = /(.|)*kyaa!~/;
-	botsave = /(.|)*\bsave game\b/;
+	botsave = /(.|)*\bsave\b/;
 	botsavecode = /(.|)*\breenter game\b/;
 
 	var waifuPhrases = [ "https://pbs.twimg.com/media/B8YdqjxIQAAU87L.jpg", "It's not like I l-like you or anything...", 
@@ -42,7 +42,7 @@ function respond() {
 		this.res.end();
 	}
 	else if(request.text && botsavecode.test(request.text)) {
-		postMessage("i see your save code");
+		postMessage("Please enter your saved game code.");
 		this.res.end();
 	}
 	else {
