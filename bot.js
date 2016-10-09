@@ -38,8 +38,22 @@ function respond() {
 
 function saveProgress(){
   var saveCode = 111111111111111;
-  var newFirstDig = saveCode % 10000000000000000;
-  postMessage("your saved code is " + saveCode.toString() + " and your new first digit is " + newFirstDig.toString());
+  var encodedSaveCode = encode(saveCode);
+  postMessage("the original code was " + saveCode.toString() + " and the encoded one is " + encodedSaveCode.toString());
+}
+
+function encode(saveCode){
+  var digitArray[];
+  for(i = 0; i < 15; i++){
+   digitArray[i] = saveCode % 10;
+   saveCode = saveCode - digitArray[i];
+   saveCode = saveCode / 10;
+  }
+  var sum = 0;
+  for (i = 0; i < 15; i++){
+   sum = sum + digitArray[i] * 10^i;
+  }
+  return sum;
 }
 
 function postMessage(response) {
