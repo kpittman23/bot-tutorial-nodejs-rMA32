@@ -41,8 +41,9 @@ function respond() {
 		this.res.end();
 	}
 	else if(request.text && botsavecode.test(request.text)) {
-		postMessage("Please enter your saved game code.");
-		listen();
+		var inputString = request.text;
+		var canDecode = inputString.replace(/^(www\.)/,"");
+		postMessage("can decode: " + canDecode.toString());
 		this.res.end();
 	}
 	else {
@@ -52,14 +53,6 @@ function respond() {
 	}
 }
 
-function listen() {
-	if(request.name != "Hackathon Bot"){
-		var string = request.text;
-		return decode(string);
-	}
-		
-	
-}
 	
 
 function saveProgress(){
