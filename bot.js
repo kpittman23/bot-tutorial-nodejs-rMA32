@@ -48,7 +48,7 @@ function respond() {
 
 function saveProgress(){
   var saveCode = Math.floor(Math.random() * 20)
-  postMessage("Your progress has been saved! Your save code is: " + saveCode);
+  postMessage("Your progress has been saved! Your save code is: ");
 }
 
 function postMessage(response) {
