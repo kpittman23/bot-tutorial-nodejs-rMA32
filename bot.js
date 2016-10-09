@@ -2,7 +2,7 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
-var races = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
+/*var races = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
 var race = races[1];
 var chosenClasses = ["Warrior", "Rogue", "Range", "Berzerker", "Xenomancer"];
 var chosenClass = classes[1];
@@ -13,7 +13,7 @@ var accuracy = 51;
 var hp = 99;
 var speed = 61;
 var checkpoint = 1;
-
+*/
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]),
@@ -68,7 +68,7 @@ function encode(saveCode){
 
 }
 
-function decode(saveCode){
+/*function decode(saveCode){
 	var digitArray = [];
 	for(i = 0; i < 15; i++){
 		digitArray[i] = saveCode % 10;
@@ -84,7 +84,7 @@ function decode(saveCode){
 	hp = digitArray[10] + digitArray[11] * 10;
 	speed = digitArray[12] + digitArray[13] * 10;
 	checkpoint = digitArray[13];
-}
+}*/
 
 function postMessage(response) {
 	var botResponse,options, body, botReq;
