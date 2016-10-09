@@ -2,16 +2,6 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
-//globals
-var attack = 1;
-var defense= 1;
-var accuracy 1;
-var evasiveness = 1;
-var sp_att = 1;
-var sp_def = 1;
-var speed = 1;
-var hp = 1;
-var crit = 1;
 
 
 
@@ -47,7 +37,7 @@ function respond() {
 }
 
 function saveProgress(){
-  postMessage("Your progress has been saved! Your save code is: ");
+  postMessage("Your progress has been saved!");
 }
 
 function postMessage(response) {
