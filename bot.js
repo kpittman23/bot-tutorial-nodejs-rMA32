@@ -95,10 +95,6 @@ function decode(saveCode){
 	speed = digitArray[12] + digitArray[13] * 10;
 	checkpoint = digitArray[13];
 	
-	postMessage("Made it");
-	//postMessage("Welcome back! Attack: " + attack.toString() + "| Defense: " + defense.toString() + "| Evasiveness: " + evasivness.toString(),
-			//"| Accuracy: " + accuracy.toString() + "| Health Points: " + hp.toString() + "| Speed: " + speed.toString());
-	
 }
 
 function postMessage(response) {
