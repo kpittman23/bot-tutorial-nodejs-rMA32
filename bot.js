@@ -27,6 +27,7 @@ function respond() {
   }
   else if(request.text && botsave.test(request.text)) {
     saveProgress();
+    encode();
     this.res.end();
   }
   else {
@@ -38,7 +39,12 @@ function respond() {
 
 function saveProgress(){
   var saveCode = getRandomInt(0,10);
-  postMessage("Your progress has been saved!" + saveCode.toString());
+  postMessage("Your progress has been saved! Your save code is: " + saveCode.toString());
+}
+
+function encode(saveCode) {
+  postMessage(saveCode.toString());
+  
 }
 
 function postMessage(response) {
