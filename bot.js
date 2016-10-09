@@ -68,7 +68,7 @@ function encode(saveCode){
 
 }
 
-/*function decode(saveCode){
+function decode(saveCode){
 	var digitArray = [];
 	for(i = 0; i < 15; i++){
 		digitArray[i] = saveCode % 10;
@@ -84,7 +84,7 @@ function encode(saveCode){
 	hp = digitArray[10] + digitArray[11] * 10;
 	speed = digitArray[12] + digitArray[13] * 10;
 	checkpoint = digitArray[13];
-}*/
+}
 
 function postMessage(response) {
 	var botResponse,options, body, botReq;
