@@ -119,7 +119,7 @@ function saveProgress() {
 
 	function decode(saveCode){
 		var digitArray = [];
-		for(i = 15; i > 0; i--){
+		for(i = 14; i >= 0; i--){
 			digitArray[i] = saveCode[i].charCodeAt() - 97;
 		}
 		characterRace = races[digitArray[0]-1];
