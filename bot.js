@@ -132,7 +132,7 @@ function saveProgress() {
 		speed = digitArray[12] + digitArray[13] * 10;
 		checkpoint = digitArray[13];
 		
-		postMessage(digitArray.toString());
+		postMessage("Your attack is: "  + attack.toString() = " and the first element in the digit array (checkpoint) is: " + digitArray[0].toString());
 
 	}
 
