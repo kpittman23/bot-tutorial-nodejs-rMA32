@@ -36,7 +36,7 @@ function respond() {
 }
 
 function saveProgress(){
-  console.log("Your progress has been saved!");
+  postMessage("Your progress has been saved!");
 }
 
 function postMessage(response) {
