@@ -47,7 +47,6 @@ function respond() {
 }
 
 function saveProgress(){
-  var saveCode = getRandomInt(0,10);
   postMessage("Your progress has been saved! Your save code is: ");
 }
 
