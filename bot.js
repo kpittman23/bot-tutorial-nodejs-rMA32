@@ -37,13 +37,13 @@ function respond() {
 }
 
 function saveProgress(){
-  var saveCode = 111111111111111;
+  var saveCode = 123456789012343;
   var encodedSaveCode = encode(saveCode);
   postMessage("the original code was " + saveCode.toString() + " and the encoded one is " + encodedSaveCode.toString());
 }
 
 function encode(saveCode){
-  var digitArray[];
+  var digitArray = [];
   for(i = 0; i < 15; i++){
    digitArray[i] = saveCode % 10;
    saveCode = saveCode - digitArray[i];
