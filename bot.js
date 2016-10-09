@@ -124,13 +124,13 @@ function saveProgress() {
 		}
 		characterRace = races[digitArray[0]-1];
 		characterClass = chosenClasses[digitArray[1]-1];
-		attack = digitArray[2] + digitArray[3] * 10;
-		defense = digitArray[4] + digitArray[5] * 10;
-		evasiveness = digitArray[6] + digitArray[7] * 10;
-		accuracy = digitArray[8] + digitArray[9] * 10;
-		hp = digitArray[10] + digitArray[11] * 10;
-		speed = digitArray[12] + digitArray[13] * 10;
-		checkpoint = digitArray[13];
+		attack = digitArray[3] + digitArray[2] * 10;
+		defense = digitArray[5] + digitArray[4] * 10;
+		evasiveness = digitArray[7] + digitArray[6] * 10;
+		accuracy = digitArray[9] + digitArray[8] * 10;
+		hp = digitArray[11] + digitArray[10] * 10;
+		speed = digitArray[13] + digitArray[12] * 10;
+		checkpoint = digitArray[14];
 		
 		postMessage("Your attack is: "  + attack.toString() + " and the first element in the digit array (checkpoint) is: " + digitArray[0].toString());
 
