@@ -50,7 +50,7 @@ function respond() {
 
 function saveProgress() {
 	postMessage("made it");
-	var saveCode = 0;
+	/*var saveCode = 0;
 	var race = "Human";
 	switch(race){
 	case "Human":
@@ -95,7 +95,7 @@ function saveProgress() {
 	savecode = savecode + speed *10;
 	savecode = savecode + checkpoint;
 	
-	encode(saveCode);
+	encode(saveCode);*/
 	
 }
 
