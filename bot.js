@@ -119,11 +119,11 @@ function saveProgress() {
 
 	function decode(saveCode){
 		var digitArray = [];
-		for(i = 0; i < 15; i++){
+		for(i = 15; i > 0; i--){
 			digitArray[i] = saveCode[i].charCodeAt() - 97;
 		}
-		characterRace = races[digitArray[0]];
-		characterClass = chosenClasses[digitArray[1]];
+		characterRace = races[digitArray[0]-1];
+		characterClass = chosenClasses[digitArray[1]-1];
 		attack = digitArray[2] + digitArray[3] * 10;
 		defense = digitArray[4] + digitArray[5] * 10;
 		evasiveness = digitArray[6] + digitArray[7] * 10;
