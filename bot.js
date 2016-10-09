@@ -89,7 +89,7 @@ function saveProgress() {
 	}
 	savecode = savecode + attack * 100000000000;
 	savecode = savecode + defense * 1000000000;
-	savecode = savecode + evasivness * 10000000;
+	savecode = savecode + evasiveness * 10000000;
 	savecode = savecode + accuracy * 100000;
 	savecode = savecode + hp * 1000;
 	savecode = savecode + speed *10;
