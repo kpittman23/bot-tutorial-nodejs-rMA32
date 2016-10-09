@@ -2,10 +2,10 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
-var races = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
+/*var races = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
 var race = races[1];
 var chosenClasses = ["Warrior", "Rogue", "Range", "Berzerker", "Xenomancer"];
-var chosenClass = classes[1];
+var chosenClass = classes[1];*/
 var attack = 20;
 var defense = 30;
 var evasiveness = 55;
