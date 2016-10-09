@@ -9,8 +9,8 @@ var accuracy = 51;
 var hp = 99;
 var speed = 61;
 var checkpoint = 1;
-var allCharacterRaces = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
-var allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomancer"];
+//var allCharacterRaces = ["Human", "Android", "Glorgok", "Ikatrians", "Zolts"];
+//var allCharacterClasses = ["Warrior", "Rogue", "Ranger", "Berzerker", "Xenomancer"];
 //var race = "Android";
 //var charClass = "Rogue";
 
@@ -30,8 +30,7 @@ function respond() {
 		this.res.end();
 	}
 	else if(request.text && botsave.test(request.text)) {
-		postMessage("gfd");
-		//saveProgress();
+		saveProgress();
 		this.res.end();
 	}
 	else if(request.text && botsavecode.test(request.text)) {
