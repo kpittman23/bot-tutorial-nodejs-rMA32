@@ -97,7 +97,7 @@ function decode(saveCode){
 	
 	postMessage("Made it");
 	//postMessage("Welcome back! Attack: " + attack.toString() + "| Defense: " + defense.toString() + "| Evasiveness: " + evasivness.toString(),
-			"| Accuracy: " + accuracy.toString() + "| Health Points: " + hp.toString() + "| Speed: " + speed.toString());
+			//"| Accuracy: " + accuracy.toString() + "| Health Points: " + hp.toString() + "| Speed: " + speed.toString());
 	
 }
 
